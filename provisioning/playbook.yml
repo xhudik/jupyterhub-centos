@@ -3,7 +3,7 @@
 
 - name: Provisioning Jupyterhub
   hosts: 
-     - datalab
+    - datalab
   vars:
      #Java variables
      java_version: 8
@@ -11,15 +11,15 @@
      java_set_javahome: true
 
   roles:
-    - role: ansible-oracle-java
+  
+  #OS update
+    - role: os_setup
+    
     - docker
     - role: python 
       pyfsrc_version: 3.5.2
       pyfsrc_make_default: yes
       
- 
-    
-#    - role: rstudioServer
     - role: jupyterhub
       install_jupyterlab: True
       generate_testusers: True
@@ -28,3 +28,6 @@
         - joe
         - sue
         - bob
+    
+#    - role: rstudioServer
+    - role: ansible-oracle-java

@@ -1,0 +1,26 @@
+---
+#Basic OS update + installation basic packages
+- name: check if repel repo is available
+  yum: name=epel-release state=latest update_cache=yes
+
+- name: Update System
+  yum: 
+      name: '*'
+      state: latest
+  become: yes
+  become_method: sudo  
+  
+- name: Install required packages
+  yum: name={{item}} state=latest update_cache=yes
+  with_items:
+    - net-tools
+    - curl
+    - libcurl
+    - libcurl-devel
+    - wget
+    - openssl
+    - openssl-devel
+    - libxml2
+    - libxml2-devel 
+  #become: yes
+  #become_method: sudo
