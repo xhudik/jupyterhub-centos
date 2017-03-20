@@ -15,3 +15,6 @@ gen_test_userpass: '$6$NqQZN4.O6J93PDXg$VbF7oebk09bOZrlnnCEOv42nxvskugdcO51PS520
 
 # pass generated with:
 # python -c "from passlib.hash import sha512_crypt; import getpass; print(sha512_crypt.using(rounds=5000).hash('password'));"  
+
+#install jupyterlab
+install_jupyterlab: True

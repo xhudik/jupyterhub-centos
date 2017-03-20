@@ -6,11 +6,12 @@
     - datalab
 
   roles:
-    #- docker
+    - docker
     - role: python 
       pyfsrc_version: 3.5.2
       pyfsrc_make_default: yes
     - role: jupyterhub
+      install_jupyterlab: True
       generate_testusers: True
       gen_test_username:
         - amy
