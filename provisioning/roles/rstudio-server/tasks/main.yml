@@ -1,0 +1,10 @@
+---
+# file: tasks/main.yml
+# Top-level installer for RStudio Server.
+#
+
+# install R
+- include: setup_R.yml
+
+- name: ideme
+  shell: echo "idemmeme"

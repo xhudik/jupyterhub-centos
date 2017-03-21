@@ -1,0 +1,35 @@
+
+
+#- name: Enable EPEL (The package is included in the CentOS Extras repository, enabled by default.)
+#  yum: name=epel-release state=latest
+
+- name: Install R
+  yum: name=R state=latest
+
+- name: Reconfigure R to find installed Java framework on the system
+  command: R CMD javareconf
+
+# A list of recommended system packages by RStudio for CentOS:
+# http://docs.rstudio.com/connect/admin/getting-started.html#installation-redhat
+- name: Install system libraries needed for various R packages
+  yum: name={{item}} state=latest update_cache=yes
+  with_items:
+    - openssl-devel
+    - libcurl
+    - libcurl-devel
+    - libxml2-devel
+    - openssl
+    - openssl-devel
+    - zlib
+    - zlib-devel
+    - unzip
+    - sqlite
+    - sqlite-devel
+
+- name: Install R packages using a setup script
+  copy: src=../scripts/setup_packages.R dest=/tmp/setup_packages.R
+
+- name: Install R packages using a setup script
+  command: R -f /tmp/setup_packages.R
+
+
