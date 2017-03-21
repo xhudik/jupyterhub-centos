@@ -7,4 +7,4 @@
 - include: setup_R.yml
 
 - name: ideme
-  shell: echo "idemmeme"
+  shell: echo "next steps will be added"
