@@ -1,5 +1,5 @@
 ---
-#Basic OS update + installation basic packages
+# OS update + installation extra packages facilitating work with Data Lab
 - name: check if repel repo is available
   yum: name=epel-release state=latest update_cache=yes
 

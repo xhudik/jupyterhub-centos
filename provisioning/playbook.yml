@@ -13,7 +13,7 @@
   roles:
   
   #OS update
-    - role: os_setup
+    #- role: lab_setup
     
     - docker
     - role: python 
@@ -28,6 +28,8 @@
         - joe
         - sue
         - bob
-    
-#    - role: rstudioServer
+        
+    # Rstudio Server
     - role: ansible-oracle-java
+    - role: rstudio-server
+    #- role: ansible-rstudio
