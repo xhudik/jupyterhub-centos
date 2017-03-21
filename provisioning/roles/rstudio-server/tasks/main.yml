@@ -6,5 +6,12 @@
 # install R
 - include: setup_R.yml
 
-- name: ideme
-  shell: echo "next steps will be added"
+# RStudio Server
+- include: setup_rstudioServer.yml
+
+# RStudio Connect
+#- include: setup_rsconnect.yml
+
+# RShiny Server
+- include: setup_shinyServer.yml
+

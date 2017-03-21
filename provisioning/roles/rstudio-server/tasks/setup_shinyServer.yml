@@ -1,0 +1,11 @@
+- name: Install Shiny Server (Open source edition)
+  # Documented https://www.rstudio.com/products/shiny/download-server/ :
+  yum: name="https://download3.rstudio.org/centos5.9/x86_64/shiny-server-1.5.3.838-rh5-x86_64.rpm" state=present
+
+# Oddly, this doesn't happen as part of package install (?):
+#- name: Copy service file into systemd hierarchy
+#  command: cp /opt/shiny-server/config/systemd/shiny-server.service /usr/lib/systemd/system/
+
+- name: Start shiny-server
+  #command: service shiny-server start
+  systemd: state=started name=shiny-server 

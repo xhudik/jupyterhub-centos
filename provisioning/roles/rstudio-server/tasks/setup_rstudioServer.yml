@@ -1,0 +1,3 @@
+- name: Install RStudio Server 
+  yum: name="https://download2.rstudio.org/rstudio-server-rhel-pro-1.0.136-x86_64.rpm" state=present
+

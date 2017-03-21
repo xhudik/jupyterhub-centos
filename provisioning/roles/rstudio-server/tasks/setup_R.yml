@@ -28,6 +28,7 @@
 
 - name: Install R packages using a setup script
   copy: src=../scripts/setup_packages.R dest=/tmp/setup_packages.R
+  #command: R -f /tmp/setup_packages.R
 
 - name: Install R packages using a setup script
   command: R -f /tmp/setup_packages.R

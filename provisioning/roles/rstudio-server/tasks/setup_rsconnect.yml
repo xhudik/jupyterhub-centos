@@ -1,0 +1,8 @@
+- name: Install RStudio Connect Server
+  yum: name="https://s3.amazonaws.com/rstudio-connect/centos6.3/x86_64/rstudio-connect-1.4.2-15-x86_64.rpm" state=present
+
+- name: Deploy RStudio Connect configuration
+  template: src=../scipts/rstudio-connect.gcfg dest=/etc/rstudio-connect/rstudio-connect.gcfg
+
+# Start RStudio Connect
+- service: name=rstudio-connect state=restarted enabled=yes
